@@ -1,0 +1,236 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image">
+   <!-- to have large image post format in Twitter -->
+   
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Webpage Title -->
+    <title>Clinic Brain</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <!-- Styles -->
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap">
+   <script src="https://kit.fontawesome.com/5ee727908a.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="w.jpg">
+    <script>
+          if(localStorage.getItem('verify') != "yes"){
+    window.location = 'index.html';
+}
+    </script>
+    <script src="appoint.js"></script>
+</head>
+<body  onbeforeunload="removeit()" onmousemove="starttt()">
+  
+    <nav class="sidebar close">
+        <header>
+          <div class="image-text">
+            <span class="image">
+              <img src="w.jpg" alt="">
+            </span>
+    
+            <div class="text logo-text">
+              <span class="name">Clinic Brain</span>
+              <span class="profession"> Psychiatrist</span>
+            </div>
+          </div>
+    
+          <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+          <div class="menu">
+    
+            <li class="search-box">
+              <i class='bx bx-search icon'></i>
+              <input onchange="fliter2()" id="sp" type="text" placeholder="Search Patient">
+            </li>
+    
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="main.html">
+                  <i class='bx bx-home-alt icon'></i>
+                  <span class="text nav-text">Dashboard</span>
+                </a>
+              </li>
+    
+              <li class="nav-link">
+                <a onclick="AddAp()">
+                  <i class='bx icon'><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4a3.91 3.91 0 0 0-4 4m6 0a1.91 1.91 0 0 1-2 2a1.91 1.91 0 0 1-2-2a1.91 1.91 0 0 1 2-2a1.91 1.91 0 0 1 2 2M4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"/></svg></i>
+                  <span class="text nav-text">Add Apointment +</span>
+                </a>
+              </li>
+    
+
+    
+            
+    
+            </ul>
+          </div>
+    
+          <div class="bottom-content">
+            <li class="">
+              <a onclick="localStorage.removeItem('verify');window.location = 'index.html'">
+                <i class='bx bx-log-out icon'></i>
+                <span class="text nav-text">Logout</span>
+              </a>
+            </li>
+    
+            <li class="mode">
+              <div class="sun-moon">
+                <i class='bx bx-moon icon moon'></i>
+                <i class='bx bx-sun icon sun'></i>
+              </div>
+              <span class="mode-text text">Dark mode</span>
+    
+              <div class="toggle-switch">
+                <span class="switch"></span>
+              </div>
+            </li>
+    
+          </div>
+        </div>
+    
+      </nav>
+      <div id="toastBox" style="position: absolute;z-index: 55;bottom: 30px;right: 30px;display: flex;align-items: flex-end;flex-direction: column;overflow: hidden;padding: 20px;">
+        
+      </div>
+      <section class="home" >
+        <div class="text">Adolecents Form</div>
+        <hr style="color: red;">
+        <div id="pop" class="popup1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/1024px-Cross_red_circle.svg.png">
+          <p id="errortt" style="font-size: 20px;"></p>
+        </div>
+
+       <a id="loader" href="#popup1"></a>
+       <a id="loaderc" href="#"></a>
+        <!-- Modal HTML -->
+        <div style="overflow: true; " id="popup1" class="overlay">
+          <div class="popup" style="display: flex; align-items: center;">
+      
+              <div class="loader"></div>
+              <div><label style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Loading ... </label></div>
+              <br><br>
+             </div>
+      </div>
+        
+        <br><br>
+        <div id="tableHold">
+          <main class="table" id="customers_table">
+            <section class="table__header" style="float: left;">
+                <h1>Appointment Done</h1>
+                <a id="aus" href="#popup4"></a>
+                <div style="overflow: true;" id="popup4" class="overlay">
+                  <div class="popup">
+                      <a id="close22" class="close" href="#">&times;</a>
+                      <br><br>
+                      <form onsubmit="return false" class="form-horizontal row">
+                        <div class="panel-footer">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <div class="checkbox" style="text-align: center;">
+                                      <label class="text-warning">
+                                          <label style="font-size: 30px;"  name="all_correct" value="1">Are You Sure You Want To Delete The Appointment.</label>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-lg-2 col-lg-offset-5">
+                                      <button id="sub" onclick="nowbigtime()" class="btn btn-success btn-lg btn-block">Delete.</button>
+                                    
+                        </div>
+                        </div>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+                <div class="input-group">
+                    <input id="searchname" type="search" placeholder="Search Data..." onkeyup="fliter1()" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search" height=""><g data-name="Layer 2"><path d="m20.71 19.29-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" data-name="search"></path></g></svg>
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                     
+                    </div>
+                </div>
+            </section>
+      
+            <section class="table__body">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th> S.No <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Appointment Date <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        </div>
+       
+      </section>
+
+      <script>
+        const body = document.querySelector('body'),
+          sidebar = body.querySelector('nav'),
+          toggle = body.querySelector(".toggle"),
+          searchBtn = body.querySelector(".search-box"),
+          modeSwitch = body.querySelector(".toggle-switch"),
+          modeText = body.querySelector(".mode-text");
+        toggle.addEventListener("click", () => {
+          sidebar.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click", () => {
+          sidebar.classList.remove("close");
+        })
+        modeSwitch.addEventListener("click", () => {
+          body.classList.toggle("dark");
+          if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+          } else {
+            modeText.innerText = "Dark mode";
+          }
+        });
+      </script>
+      
+   
+</body>
+</html>

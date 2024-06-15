@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image">
+   <!-- to have large image post format in Twitter -->
+   
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Webpage Title -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+    <title>Clinic Brain</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <!-- Styles -->
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&amp;display=swap">
+   <script src="https://kit.fontawesome.com/5ee727908a.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="w.jpg">
+    <script>
+          if(localStorage.getItem('verify') != "yes"){
+    window.location = 'index.html';
+}
+    </script>
+    <script src="mainmain.js"></script>
+</head>
+
+<body onbeforeunload="removeit()" onmousemove="starttt()" onload="dd()">
+    
+
+    <nav class="sidebar close">
+        <header>
+          <div class="image-text">
+            <span class="image">
+              <img src="w.jpg" alt="">
+            </span>
+    
+            <div class="text logo-text">
+              <span class="name">Clinic Brain</span>
+              <span class="profession"> Psychiatrist</span>
+            </div>
+          </div>
+    
+          <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+          <div class="menu">
+    
+            <li class="search-box">
+              <i class='bx bx-search icon'></i>
+              <input id="sp" onkeyup="fliter2()" type="search" placeholder="Search Patient">
+            </li>
+    
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="main.html">
+                  <i class='bx bx-home-alt icon'></i>
+                  <span class="text nav-text">Dashboard</span>
+                </a>
+              </li>
+    
+              <li class="nav-link">
+                <a href="#popup1">
+                  <i class='bx icon'><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a3.91 3.91 0 0 0 4 4a3.91 3.91 0 0 0 4-4a3.91 3.91 0 0 0-4-4a3.91 3.91 0 0 0-4 4m6 0a1.91 1.91 0 0 1-2 2a1.91 1.91 0 0 1-2-2a1.91 1.91 0 0 1 2-2a1.91 1.91 0 0 1 2 2M4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"/></svg></i>
+                  <span class="text nav-text">Add +</span>
+                </a>
+              </li>
+    
+
+    
+            
+    
+            </ul>
+          </div>
+    
+          <div class="bottom-content">
+            <li class="">
+              <a onclick="localStorage.clear();window.location = 'index.html'">
+                <i class='bx bx-log-out icon'></i>
+                <span class="text nav-text">Logout</span>
+              </a>
+            </li>
+    
+            <li class="mode">
+              <div class="sun-moon">
+                <i class='bx bx-moon icon moon'></i>
+                <i class='bx bx-sun icon sun'></i>
+              </div>
+              <span class="mode-text text">Dark mode</span>
+    
+              <div class="toggle-switch">
+                <span class="switch"></span>
+              </div>
+            </li>
+    
+          </div>
+        </div>
+    
+      </nav>
+      <div id="toastBox" style="position: absolute;z-index: 55;bottom: 30px;right: 30px;display: flex;align-items: flex-end;flex-direction: column;overflow: hidden;padding: 20px;">
+        
+      </div>
+      <a id="loader" href="#popup5"></a>
+      <a id="loaderc" href="#"></a>
+       <!-- Modal HTML -->
+       <div style="overflow: true; " id="popup5" class="overlay">
+         <div class="popup" style="display: flex; align-items: center;">
+     
+             <div class="loader"></div>
+             <div><label style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Loading ... </label></div>
+             <br><br>
+            </div>
+     </div>
+      <section class="home">
+        <div class="text">Patient List</div>
+        <hr style="color: red;">
+
+        <!-- Modal HTML -->
+        <div id="pop" class="popup1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/1024px-Cross_red_circle.svg.png">
+          <p id="errortt" style="font-size: 20px;"></p>
+        </div>
+
+        <div style="overflow: true;" id="popup1" class="overlay">
+            <div class="popup">
+                <a id="close22" class="close" href="#">&times;</a>
+                <br><br>
+                <form onsubmit="return false" class="form-horizontal row">
+                  <legend class="text-center">Personal Info</legend>
+                  <div class="form-group">
+                      <label for="applicant_name" class="control-label col-sm-3">Adolesent Name :</label>
+                      <div class="col-sm-7">
+                          <input type="text" name="Adolecent_name" id="Adolecent_name" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="father_name" class="control-label col-sm-3">Adolecent Age :</label>
+                      <div class="col-sm-7">
+                          <input type="number" name="age" id="age" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="mother_name" class="control-label col-sm-3">Sex :</label>
+                      <div class="col-sm-7">
+                        <select name="sex" id="sex" class="form-control">
+                            <option selected disabled value="">Select One</option>
+                            <option value="Male">Male</option><option value="Female">Female</option><option value="Rather Not Say">Rather Not Say</option>
+                        </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="date_of_birth" class="control-label col-sm-3">Date of Birth :</label>
+                      <div class="col-sm-2">
+                          <select name="date_day" id="date_of_birth" class="form-control">
+                                      <option selected disabled value="">Day</option>
+                                      <option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+                                  </select>
+                          <span class="help-inline"></span>
+                      </div>
+                      <div class="col-sm-2">
+                          <select id="date_month" name="date_month" class="form-control">
+                                      <option selected disabled value="">Month</option>
+                                      <option value="01">01 - January</option>
+                                      <option value="02">02 - February</option>
+                                      <option value="03">03 - March</option>
+                                      <option value="04">04 - April</option>
+                                      <option value="05">05 - May</option>
+                                      <option value="06">06 - June</option>
+                                      <option value="07">07 - July</option>
+                                      <option value="08">08 - August</option>
+                                      <option value="09">09 - September</option>
+                                      <option value="10">10 - October</option>
+                                      <option value="11">11 - November</option>
+                                      <option value="12">12 - December</option>
+                                  </select>
+                      </div>
+                      <div class="col-sm-2">
+                          <select id="date_year" name="date_year" class="form-control">
+                                      <option  disabled selected value="">Year</option>
+                                      <option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option>
+                                  </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="control-label col-sm-3" for="mobile">Mobile :</label>
+                      <div class="col-sm-4">
+                          <div class="input-group">
+                              <span class="input-group-addon">+91</span>
+                              <input type="text" class="form-control" id="mobile" maxlength="10">
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label id="registration1" class="control-label col-sm-3">Registration No. :</label>
+                      <div class="col-sm-2">
+                        <input type="number" name="registration" id="registration" class="form-control">
+                      </div>
+                      <label for="Handedness" class="control-label col-sm-2">Handedness :</label>
+                      <div class="col-sm-3">
+                          <select name="Handedness" id="Handeddness" class="form-control">
+                                              <option value="" disabled selected>Select One</option>								
+                                              <option value="Left">Left</option>
+                                              <option value="Ambidext">Ambidext</option>
+                                              <option value="Right">Right</option>
+                                          </select>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="tongue" class="control-label col-sm-3">Mother Tongue :</label>
+                      <div class="col-sm-2">
+                        <input type="text" name="tongue" id="tongue" class="form-control">
+                      </div>
+                      <label for="nationality" class="control-label col-sm-2">Consanguinity :</label>
+                      <div class="col-sm-3">
+                        <input type="text" name="Consanguinity" id="Consanguinity" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="email" class="control-label col-sm-3">Email :</label>
+                      <div class="col-sm-6">
+                          <input type="email" name="email" id="email" class="form-control">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="present_address" class="control-label col-sm-3">Present Address :</label>
+                      <div class="col-sm-7">
+                          <textarea name="present_address" rows="3" id="present_address" class="form-control"></textarea>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="permanent_address" class="control-label col-sm-3">Permanent Address :</label>
+                      <div class="col-sm-7">
+                          <textarea name="permanent_address" id="permanent_address" rows="3" class="form-control"></textarea>
+                      </div>
+                  </div>
+                  <legend class="text-center">School History</legend>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="panel panel-default">
+                                          <div class="panel-heading">
+                                              <h5 class="panel-title text-center">SchoolHistory</h5>
+                                          </div>
+                                          <div class="panel-body">
+                                              <div class="form-group">
+                                                  <label for="Admission_age" class="control-label col-sm-2">AgeOfAdmission</label>
+                                                  <div class="col-sm-4">
+                                                      <input name="Admission_age" id="Admission_age" class="form-control">
+                                                       
+                                                  </div>
+
+                                                  <label class="control-label col-sm-2" for="M_Instruction">MediumOFInstruction</label>
+                                                  <div class="col-sm-4">
+                                                      <div class="input-group">
+                                                          <span class="input-group-addon">🔠</span>
+                                                          <input type="text" name="grad_result" class="form-control" id="M_Instruction">
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="form-group">
+                                                  <label for="grad_subject" class="control-label col-sm-2">Standard: </label>
+                                                  <div class="col-sm-4">
+                                                    <input type="text" name="grad_result" class="form-control" id="Standard">
+                                                  </div>
+
+                                                  <label class="control-label col-sm-2" for="grad_pass_year">FailureInEachClass</label>
+                                                  <div class="col-sm-4">
+                                                      <select name="grad_pass_year" id="Failure" class="form-control">
+                                                                  <option selected disabled value="">Select One</option>
+                                                                  <option value="Yes">Yes</option><option value="No">No</option>
+                                                              </select>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="grad_university" class="control-label col-sm-2">School Performance</label>
+                                                  <div class="col-sm-4">
+                                                    <select name="grad_duration" id="Performance" class="form-control">
+                                                        <option selected disabled value="">Select One</option>
+                                                        <option value="Good">Good</option>
+                                                        <option value="Average">Average</option>
+                                                        <option value="Poor">Poor</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                  </div>
+
+                                                  <label class="control-label col-sm-2" for="grad_duration">Behaviour In School</label>
+                                                  <div class="col-sm-4">
+                                                    <input type="text" name="grad_result" class="form-control" id="Behaviour_School">
+                                                  </div>
+                                              </div>
+                                          </div>
+
+
+                                      </div>
+                                  </div>
+                              </div>
+                              <legend class="text-center">Family History</legend>
+                              <div class="row">
+                                  <div class="col-lg-12">
+                                      <div class="panel panel-default">
+                                          <div class="panel-heading">
+                                              <h5 class="panel-title text-center">Family History</h5>
+                                          </div>
+                                          <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="ms_exam_type" class="control-label col-sm-4">Mental Illness :</label>
+                                                <div class="col-sm-8">
+                                                    <select name="ms_exam_type" id="MentalIllness" class="form-control">
+                                                                <option value="" selected disabled>Select One</option>
+                                                                <option value="True">True</option>
+                                                                <option value="False">False</option>
+                                                        </select>
+                                                </div>
+
+                                                <label for="ms_exam_type" class="control-label col-sm-4">Psychosis :</label>
+                                                <div class="col-sm-8">
+                                                    <select name="ms_exam_type" id="Psychosis" class="form-control">
+                                                                <option value="" selected disabled>Select One</option>
+                                                                <option value="True">True</option>
+                                                                <option value="False">False</option>
+                                                        </select>
+                                                </div>
+
+                                                <label for="ms_exam_type" class="control-label col-sm-4">Psychosomatic :</label>
+                                                <div class="col-sm-8">
+                                                    <select name="ms_exam_type" id="Psychosomatic" class="form-control">
+                                                                <option value="" selected disabled>Select One</option>
+                                                                <option value="True">True</option>
+                                                                <option value="False">False</option>
+                                                        </select>
+                                                </div>
+
+                                                  <label class="control-label col-sm-4" for="ms_pass_year">Neurosis :</label>
+                                                  <div class="col-sm-8">
+                                                    <select name="ms_exam_type" id="Neurosis" class="form-control">
+                                                                <option value="" selected disabled>Select One</option>
+                                                                <option value="True">True</option>
+                                                                <option value="False">False</option>
+                                                        </select>
+                                                </div>
+                                                <label class="control-label col-sm-4" for="ms_pass_year">Suicide :</label>
+                                                <div class="col-sm-8">
+                                                  <select name="ms_exam_type" id="Suicide"class="form-control">
+                                                              <option value="" selected disabled>Select One</option>
+                                                              <option value="True">True</option>
+                                                              <option value="False">False</option>
+                                                      </select>
+                                              </div>
+                                              
+                                      
+                                              <div class="form-group">
+                                                  <label for="ms_university" class="control-label col-sm-4">Psychopathic :</label>
+                                                  <div class="col-sm-8">
+                                                      <input type="text" name="ms_university" id="Psychopathic" class="form-control">
+                                                  </div>
+
+                                                  <label for="ms_university" class="control-label col-sm-4">Retardation :</label>
+                                                  <div class="col-sm-8">
+                                                      <input type="text" name="ms_university" id="Retardation" class="form-control">
+                                                  </div>
+                                                  <label for="ms_university" class="control-label col-sm-4">Epilepsy :</label>
+                                                  <div class="col-sm-8">
+                                                      <input type="text" name="ms_university" id="Epilepsy" class="form-control">
+                                                  </div>
+                                                  <label for="ms_university" class="control-label col-sm-4">Drug Addiction :</label>
+                                                  <div class="col-sm-8">
+                                                      <input type="text" name="ms_university" id="Drug" class="form-control">
+                                                  </div>
+                                                  <label for="ms_university" class="control-label col-sm-4">Enuresis in sibling :</label>
+                                                  <div class="col-sm-8">
+                                                      <input type="text" name="ms_university" id="Enuresis" class="form-control">
+                                                  </div>
+                                              </div>
+                                              
+                                          </div>
+
+                                          
+                                      </div>
+                                  </div>
+
+                                      </div>
+                                 </div>
+                                 <legend class="text-center">Psychosocial History</legend>
+                              <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title text-center">Father</h5>
+                                        </div>
+                                        <div class="panel-body">
+                                         
+                                            
+                                    
+                                            <div class="form-group">
+                                                <label for="ms_university" class="control-label col-sm-2">Education :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Education_Father" class="form-control">
+                                                </div>
+
+                                                <label for="ms_university" class="control-label col-sm-2">Occupation :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Occupation_Father" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Personality :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Personality_Father" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Traits :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Traits_Father" class="form-control">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        
+                                    </div>
+                              <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title text-center">Mother</h5>
+                                        </div>
+                                        <div class="panel-body">
+                                         
+                                            
+                                    
+                                            <div class="form-group">
+                                                <label for="ms_university" class="control-label col-sm-2">Education :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Education_Mother" class="form-control">
+                                                </div>
+
+                                                <label for="ms_university" class="control-label col-sm-2">Occupation :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Occupation_Mother" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Personality :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Personality_Mother" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Traits :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Traits_Mother" class="form-control">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        
+                                    </div>
+                              <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title text-center">Others</h5>
+                                        </div>
+                                        <div class="panel-body">
+                                         
+                                            
+                                    
+                                            <div class="form-group">
+                                                <label for="ms_university" class="control-label col-sm-2">Education :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Education_Others" class="form-control">
+                                                </div>
+
+                                                <label for="ms_university" class="control-label col-sm-2">Occupation :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Occupation_Others" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Personality :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Personality_Others" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Traits :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Traits_Others" class="form-control">
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                          
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <legend class="text-center">Birth And Infancy</legend>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title text-center">Birth And Infacy History</h5>
+                    </div>
+                    <div class="panel-body">
+                      <div class="form-group">
+                          <label for="ms_exam_type" class="control-label col-sm-4">PregnencySize :</label>
+                          <div class="col-sm-8">
+                              <select name="ms_exam_type" id="Pregnency_Lenght" class="form-control">
+                                          <option value="" selected disabled>Select One</option>
+                                          <option value="Premature">Premature</option>
+                                          <option value="Full Term">Full Term</option>
+                                          <option value="Full Term">Post Term</option>
+                                  </select>
+                          </div>
+
+                          <label for="ms_exam_type" class="control-label col-sm-4">IllnessPregnency:</label>
+                          <div class="col-sm-8">
+                              <select name="ms_exam_type" id="IllnessDuringPregnency" class="form-control">
+                                          <option value="" selected disabled>Select One</option>
+                                          <option value="Yes">Yes</option>
+                                          <option value="No">No</option>
+                                  </select>
+                          </div>
+
+                          <label for="ms_exam_type" class="control-label col-sm-4">WhatIlleness :</label>
+                          <div class="col-sm-8">
+                              <input name="ms_exam_type" id="WhatIllness" class="form-control">
+
+                          </div>
+
+                            <label class="control-label col-sm-4" for="ms_pass_year">ExposureToDrug :</label>
+                            <div class="col-sm-8">
+                              <select name="ms_exam_type" id="Drug_Explosure" class="form-control">
+                                          <option value="" selected disabled>Select One</option>
+                                          <option value="No">No</option>
+                                          <option value="Insulin">Insulin</option>
+                                          <option value="Progesteron">Progesteron</option>
+                                          <option value="Anticonvulsant">Anticonvulsant</option>
+                                          <option value="Radiation">Radiation</option>
+                                          <option value="Other">Other</option>
+                                  </select>
+                          </div><legend class="text-center">||</legend>
+                          <div class="form-group">
+                            <label for="applicant_name" class="control-label col-sm-4">MotherAgeWhenChildBorn :</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="Adolecent_name" id="age_mother" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="father_name" class="control-label col-sm-4">Home / Hospital Delivery :</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="age" id="homeHospital" class="form-control">
+                            </div>
+                        </div>
+                
+
+                        
+                    </div>
+
+                    
+                </div>
+            </div>
+
+                </div>
+            </div>
+            <legend class="text-center">History Of Labour</legend>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="panel-title text-center">Labours History</h5>
+                        </div>
+                        <div class="panel-body">
+                          <div class="form-group">
+                              <label for="ms_exam_type" class="control-label col-sm-2">Dilevery Type :</label>
+                              <div class="col-sm-4">
+                                  <select name="ms_exam_type" id="Delivery" class="form-control">
+                                              <option value="" selected disabled>Select One</option>
+                                              <option value="Normal">Normal</option>
+                                              <option value="Breech">Breech</option>
+                                              <option value="Instrumental">Instrumental</option>
+                                              <option value="Cesarian">Cesarian</option>
+
+                                      </select>
+                              </div>
+
+                              <label for="ms_exam_type" class="control-label col-sm-2">Duration:</label>
+                              <div class="col-sm-4">
+                                  <select name="ms_exam_type" id="Duration" class="form-control">
+                                              <option value="" selected disabled>Select One</option>
+                                              <option value="Prolong">Prolong</option>
+                                              <option value="Normal">Normal</option>
+                                              <option value="Precipitate">Precipitate</option>
+                                      </select>
+                              </div>
+
+                              <label for="ms_exam_type" class="control-label col-sm-2">Cry :</label>
+                              <div class="col-sm-4">
+                                  <select name="ms_exam_type" id="Cry" class="form-control">
+                                              <option value="" selected disabled>Select One</option>
+                                              <option value="Immidiate">Immidiate</option>
+                                              <option value="Delayed">Delayed</option>
+                                      </select>
+                              </div>
+
+                                <label class="control-label col-sm-2" for="ms_pass_year">Vaccination :</label>
+                                <div class="col-sm-4">
+                                  <select name="ms_exam_type" id="Vaccination" class="form-control">
+                                              <option value="" selected disabled>Select One</option>
+                                              <option value="Complete">Complete</option>
+                                              <option value="Incomplete">Incomplete</option>
+                                              <option value="Never Received">Never Received</option>
+                                              <option value="Anticonvulsant">Anticonvulsant</option>
+                                              <option value="Radiation">Radiation</option>
+                                              <option value="Other">Other</option>
+                                      </select>
+                              </div><legend class="text-center">||</legend>
+                              <div class="form-group">
+                                <label for="applicant_name" class="control-label col-sm-3">Birth Weight in (Kg) :</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="Adolecent_name" id="weight_birth" class="form-control">
+                                </div>
+                            </div>
+                    
+
+                            
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+                <legend class="text-center">Feeding History</legend>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h5 class="panel-title text-center">History Of Feeding</h5>
+                            </div>
+                            <div class="panel-body">
+                              <div class="form-group">
+                                  <label for="ms_exam_type" class="control-label col-sm-2">Type :</label>
+                                  <div class="col-sm-4">
+                                      <select name="ms_exam_type" id="Feeding_Type" class="form-control">
+                                                  <option value="" selected disabled>Select One</option>
+                                                  <option value="Breasted">Breasted</option>
+                                                  <option value="Bottled">Bottled</option>
+                                                  <option value="Both">Both</option>
+
+                                          </select>
+                                  </div>
+
+                                  <label for="ms_exam_type" class="control-label col-sm-2">Age of Wearing:</label>
+                                  <div class="col-sm-4">
+                                      <select name="ms_exam_type" id="wearing_age" class="form-control">
+                                                  <option value="" selected disabled>Select One</option>
+                                                  <option value="Started">Started</option>
+                                                  <option value="Completed">Completed</option>
+                                            
+                                          </select>
+                     
+                                       </div>
+                                    </div>
+
+                                  </div>
+                             </div>
+                            </div>
+                        
+
+                                
+                             </div>
+                             <legend class="text-center">Development History : Milestone</legend>
+                             <div class="row">
+                                 <div class="col-lg-12">
+                                     <div class="panel panel-default">
+                                         <div class="panel-heading">
+                                             <h5 class="panel-title text-center">Gross Meter</h5>
+                                         </div>
+                                         <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="ms_university" class="control-label col-sm-2">Neck Holding :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Neck_Holding" class="form-control">
+                                                </div>
+
+                                                <label for="ms_university" class="control-label col-sm-2">Sitting :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="sitting" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Crawling :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Crawling" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Walking :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Walking" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Running :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Running" class="form-control">
+                                                </div>
+                                                <label for="ms_university" class="control-label col-sm-2">Cycling :</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="ms_university" id="Cycling" class="form-control">
+                                                </div>
+                                            </div>
+
+                                               </div>
+                                          </div>
+                                         </div>
+                                        
+                                           
+
+                                   
+                                   
+                               
+
+                                       
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h5 class="panel-title text-center">Fine Motor</h5>
+                                                </div>
+                                                <div class="panel-body">
+                                                   <div class="form-group">
+                                                       <label for="ms_university" class="control-label col-sm-4">ObjectReached :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Object_Reached" class="form-control">
+                                                       </div>
+                                    
+                                                       <label for="ms_university" class="control-label col-sm-4">TransferOfObject :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Transfer_Object" class="form-control">
+                                                       </div>
+                                                       <label for="ms_university" class="control-label col-sm-4">PalmarGrasp :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Palmar" class="form-control">
+                                                       </div>
+                                                       <label for="ms_university" class="control-label col-sm-4">PincerGrasp :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Pincer" class="form-control">
+                                                       </div>
+                                                       <label for="ms_university" class="control-label col-sm-4">Handwriting :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Handwriting" class="form-control">
+                                                       </div>
+                                                       <label for="ms_university" class="control-label col-sm-4">Drawing :</label>
+                                                       <div class="col-sm-8">
+                                                           <input type="text" name="ms_university" id="Drawing" class="form-control">
+                                                       </div>
+                                                   </div>
+                                    
+                                                      </div>
+                                    
+                                    
+                                                        </div>
+                                    
+                                                      </div>
+                                              
+                                           
+                                           
+                                            
+                                    
+                                                    
+                                                 </div>
+                                                 <div class="row">
+                                                     <div class="col-lg-12">
+                                                         <div class="panel panel-default">
+                                                             <div class="panel-heading">
+                                                                 <h5 class="panel-title text-center">Language</h5>
+                                                             </div>
+                                                             <div class="panel-body">
+                                                                <div class="form-group">
+                                                                    <label for="ms_university" class="control-label col-sm-4">Gurgling :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="Gurgling" class="form-control">
+                                                                    </div>
+                                    
+                                                                    <label for="ms_university" class="control-label col-sm-4">Babbling :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="Babbling" class="form-control">
+                                                                    </div>
+                                                                    <label for="ms_university" class="control-label col-sm-4">Monosyllable :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="Monosyllable" class="form-control">
+                                                                    </div>
+                                                                    <label for="ms_university" class="control-label col-sm-4">MeaningfulWords :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="MeanWords" class="form-control">
+                                                                    </div>
+                                                                    <label for="ms_university" class="control-label col-sm-4">Fluent Talking :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="Fluent" class="form-control">
+                                                                    </div>
+                                                                    <label for="ms_university" class="control-label col-sm-4">Clarity Of Speech :</label>
+                                                                    <div class="col-sm-8">
+                                                                        <input type="text" name="ms_university" id="SpeechClarity" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                    
+                                                                   </div>
+                                                              </div>
+                                                             </div>
+                                                             </div>
+                                                            
+                                                            
+                                                            
+                                    
+                                    
+                                                             <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="panel panel-default">
+                                                                        <div class="panel-heading">
+                                                                            <h5 class="panel-title text-center">Social</h5>
+                                                                        </div>
+                                                                        <div class="panel-body">
+                                                                           <div class="form-group">
+                                                                               <label for="ms_university" class="control-label col-sm-4">Social Smile:</label>
+                                                                               <div class="col-sm-8">
+                                                                                   <input type="text" name="ms_university" id="SocialSmile" class="form-control">
+                                                                               </div>
+                                    
+                                                                               <label for="ms_university" class="control-label col-sm-4">Stranger Anxity :</label>
+                                                                               <div class="col-sm-8">
+                                                                                   <input type="text" name="ms_university" id="StranAnxity" class="form-control">
+                                                                               </div>
+                                                                               <label for="ms_university" class="control-label col-sm-4">Group Activity :</label>
+                                                                               <div class="col-sm-8">
+                                                                                   <input type="text" name="ms_university" id="GroupActivity" class="form-control">
+                                                                               </div>
+                                    
+                                                                               <label for="ms_university" class="control-label col-sm-4">Bladder Control :</label>
+                                                                               <div class="col-sm-8">
+                                                                                   <input type="text" name="ms_university" id="BladderControl" class="form-control">
+                                                                               </div>
+                                                                                                                                             
+                                                                            </div><legend class="text-center">||</legend>
+                                                                            <div class="form-group">
+                                                                              <label for="applicant_name" class="control-label col-sm-4">Old Pre Occupation :</label>
+                                                                              <div class="col-sm-8">
+                                                                                  <input type="text" name="Adolecent_name" id="OPOccupation" class="form-control">
+                                                                              </div>
+                                                                              <label for="applicant_name" class="control-label col-sm-4">Circum scribed Interest :</label>
+                                                                              <div class="col-sm-8">
+                                                                                  <input type="text" name="Adolecent_name" id="CSInterest" class="form-control">
+                                                                              </div>
+                                                                              <label for="applicant_name" class="control-label col-sm-4">Bowel Control :</label>
+                                                                              <div class="col-sm-8">
+                                                                                  <input type="text" name="Adolecent_name" id="BowelControl" class="form-control">
+                                                                              </div>
+                                                                              <label for="applicant_name" class="control-label col-sm-4">Expression|First Prorper Word Sentence :</label>
+                                                                              <div class="col-sm-8">
+                                                                                  <input type="text" name="Adolecent_name" id="FPWS" class="form-control">
+                                                                              </div>
+                                                                          </div>
+                                    
+                                                                        
+                                                                          
+                                                                        </div>
+                                    
+                                    
+                                                                           </div>
+                                    
+                                                                              </div>
+                                                                        </div>
+                                                                       
+
+                                                           
+
+                                                      
+                                                   
+           
+                            
+                                                                         <legend class="text-center">Toliet Training</legend>   
+                                                                         <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="panel panel-default">
+                                                                                    <div class="panel-heading">
+                                                                                        <h5 class="panel-title text-center">Training Of The Toilet</h5>
+                                                                                    </div>
+                                                                                    <div class="panel-body">
+                                                                                        <div class="form-group">
+                                                                                          <label for="applicant_name" class="control-label col-sm-4">Bowels :</label>
+                                                                                          <div class="col-sm-8">
+                                                                                              <input type="text" name="Adolecent_name" id="Bowels" class="form-control">
+                                                                                          </div>
+                                                                                          <label for="applicant_name" class="control-label col-sm-4">Bladder :</label>
+                                                                                          <div class="col-sm-8">
+                                                                                              <input type="text" name="Adolecent_name" id="Bladder" class="form-control">
+                                                                                          </div>
+                                                                                          <label for="applicant_name" class="control-label col-sm-4">Punishment/Reward/AllowedOnTime :</label>
+                                                                                          <div class="col-sm-8">
+                                                                                              <input type="text" name="Adolecent_name" id="PAOT" class="form-control">
+                                                                                          </div>
+                                                                                      </div>
+
+                                                                                    
+                                                                                      
+                                                                                    </div>
+
+
+                                                                                       </div>
+                                        
+                                                                                          </div>
+                                                                                     </div>   
+                                                                                     <legend class="text-center">Past History</legend>   
+                                                                                     <div class="row">
+                                                                                        <div class="col-lg-12">
+                                                                                            <div class="panel panel-default">
+                                                                                                <div class="panel-heading">
+                                                                                                    <h5 class="panel-title text-center">Adolecent Past History</h5>
+                                                                                                </div>
+                                                                                                <div class="panel-body">
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="control-label col-sm-4" for="ms_pass_year">CNS Disease :</label>
+                                                                                  <div class="col-sm-8" id="div_7">
+                                                                                    <select name="ms_exam_type" id="CNSD" class="form-control">
+                                                                                        <option value="" selected disabled>Select One</option>
+                                                                                        <option value="Infection">Infection</option>
+                                                                                        <option value="Involuntary Movements">Involuntary Movements</option>
+                                                                                        <option value="Head Injury">Head Injury</option>
+                                                                                        <option value="Convulsions">Convulsions</option>
+                                                                                        </select>
+                                                                                </div>
+                                                                                                      <label for="applicant_name" class="control-label col-sm-4">Systemic Disease :</label>
+                                                                                                      <div class="col-sm-8">
+                                                                                                          <input type="text" name="Adolecent_name" id="SysD" class="form-control">
+                                                                                                      </div>
+                                                                                                      <label for="applicant_name" class="control-label col-sm-4">Psychomatic illness :</label>
+                                                                                                      <div class="col-sm-8">
+                                                                                                          <input type="text" name="Adolecent_name" id="Psylllness" class="form-control">
+                                                                                                      </div>
+                                                                                                      <label for="applicant_name" class="control-label col-sm-4">Hospitalisation :</label>
+                                                                                                      <div class="col-sm-8">
+                                                                                                          <input type="text" name="Adolecent_name" id="Hospitalisation" class="form-control">
+                                                                                                      </div>
+                                                                                                      <label for="applicant_name" class="control-label col-sm-4">Psychiatric illness :</label>
+                                                                                                      <div class="col-sm-8">
+                                                                                                          <input type="text" name="Adolecent_name" id="PAOT1" class="form-control">
+                                                                                                      </div>
+                                                                                                  </div>
+
+                                                                                                
+                                                                                                  
+                                                                                                </div>
+
+
+                                                                                                   </div>
+                                                    
+                                                                                                      </div>
+                                                                                                 </div> 
+                                                                                     
+                  <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="checkbox" style="text-align: center;">
+                                <label class="text-warning">
+                                    <input style="font-size: 30px;" type="checkbox" id="all_correct"  name="all_correct" value="1"> I hereby declare that all the above information are correct and assure that I will abide by all the rules.
+                                </label>
+            </div>
+            </div>
+            </div>
+            </div>
+          
+
+                    <div class="row">
+                        <div class="col-lg-2 col-lg-offset-5">
+                                <button id="sub" onclick="addpatient()" class="btn btn-success btn-lg btn-block">Save And Print </button>
+                              
+     </div>
+          </div>
+                  </div>
+                  </form>
+            </div>
+        </div>
+          
+        <br><br>
+        <div id="tableHold">
+          <main class="table" id="customers_table">
+            <section class="table__header" style="float: left;">
+                <h1>Adolecent's Form</h1>
+                <div class="input-group">
+                    <input id="searchname" type="search" placeholder="Search Data..." onkeyup="fliter1()" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search" height=""><g data-name="Layer 2"><path d="m20.71 19.29-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" data-name="search"></path></g></svg>
+                </div>
+                <div class="export__file">
+                    <label for="export-file" class="export__file-btn" title="Export File"></label>
+                    <input type="checkbox" id="export-file">
+                    <div class="export__file-options">
+                     
+                    </div>
+                </div>
+            </section>
+      
+            <section class="table__body">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th> S.No <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Age <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> First Visit date <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Update date <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+            
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        </div>
+       
+      </section>
+
+
+      <script>
+        const body = document.querySelector('body'),
+          sidebar = body.querySelector('nav'),
+          toggle = body.querySelector(".toggle"),
+          searchBtn = body.querySelector(".search-box"),
+          modeSwitch = body.querySelector(".toggle-switch"),
+          modeText = body.querySelector(".mode-text");
+        toggle.addEventListener("click", () => {
+          sidebar.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click", () => {
+          sidebar.classList.remove("close");
+        })
+        modeSwitch.addEventListener("click", () => {
+          body.classList.toggle("dark");
+          if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+          } else {
+            modeText.innerText = "Dark mode";
+          }
+        });
+      </script>
+      
+   
+</body>
+</html>
